@@ -22,6 +22,9 @@ COPY --from=build /app/${JAR_FILE} /app/app.jar
 # Puerto por defecto. En Render se usará la variable PORT y localmente 8080.
 EXPOSE 8080
 
+# Perfil por defecto en el contenedor: producción con H2.
+ENV SPRING_PROFILES_ACTIVE=pdn
+
 # Opcional: ajuste de memoria vía JAVA_OPTS
 ENV JAVA_OPTS=""
 
